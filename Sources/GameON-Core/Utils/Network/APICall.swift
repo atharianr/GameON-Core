@@ -26,7 +26,7 @@ public enum Endpoints {
             switch self {
             case .games: return "\(RawgAPI.baseUrl)games"
             case .searchGames: return "\(RawgAPI.baseUrl)games"
-            case .details(let apiKey, let id): return "\(RawgAPI.baseUrl)games/\(id)"
+            case .details(_, let id): return "\(RawgAPI.baseUrl)games/\(id)"
             }
         }
         
@@ -41,7 +41,7 @@ public enum Endpoints {
                 "key": apiKey,
                 "search": query
             ]
-            case .details(let apiKey, let id): return [
+            case .details(let apiKey, _): return [
                 "key": apiKey
             ]
             }
